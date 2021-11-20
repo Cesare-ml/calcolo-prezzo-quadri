@@ -1,0 +1,34 @@
+<script>
+
+
+function calcola(){
+  var valoreartista = document.getElementById("valoreartista").value;
+  var lunghezza = document.getElementById("lunghezza").value;
+  var altezza = document.getElementById("altezza").value;
+
+  var dim_inch2 = (lunghezza/2.54)*(altezza/2.54);
+  dim_inch2 = parseFloat(dim_inch2).toFixed(2);
+
+  document.getElementById('risultato').innerHTML =
+    dim_inch2 * valoreartista + 'euro';
+  ;
+}
+</script>
+
+<h1>Calcolo prezzo quadro</h1>
+
+Valore dell'artista:
+<input type="number" id="valoreartista" name="valoreartista" min="0" value="1">
+<br>
+
+<input type="number" id="lunghezza" name="lunghezza" min="0" value="0">
+cm x
+<input type="number" id="altezza" name="altezza" min="0" value="0">
+cm
+
+<button onclick="calcola()">Calcola</button>
+
+<br>
+<br>
+<div id="risultato">
+</div>
